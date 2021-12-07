@@ -50,19 +50,11 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedRoom()
     {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            Debug.Log("Created room!!");
-            PhotonNetwork.LoadLevel("GameScene");
-        }
-        else
-        {
-            Debug.Log("Joined room!!");
-        }
+        Debug.Log("Joined room!!");
     }
 
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
-        Debug.LogWarningFormat("¥[¤J¥¢±Ñ " + message);
+        Debug.Log(message);
     }
 }
