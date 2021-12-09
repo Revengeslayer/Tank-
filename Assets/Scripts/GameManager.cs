@@ -3,11 +3,15 @@ using Photon.Realtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
     // Start is called before the first frame update
     public static GameManager instance;
+    public static GameObject localPlayer;
+   
+  
     string gameVersion = "1";
     void Awake()
     {
@@ -26,6 +30,9 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.ConnectUsingSettings();
         PhotonNetwork.GameVersion = gameVersion;
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+
     }
     public override void OnConnected()
     {
@@ -65,4 +72,15 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         Debug.LogWarningFormat("¥[¤J¥¢±Ñ " + message);
     }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (!PhotonNetwork.InRoom)
+        {
+            return;
+        }
+        localPlayer = PhotonNetwork.Instantiate("TankPlayer", new Vector3(0, 0, 0), Quaternion.identity, 0);
+        Debug.Log("Player Instance ID: " + localPlayer.GetInstanceID());
+    }
 }
+
