@@ -10,7 +10,6 @@ namespace Tanks
     public class MainMenu : MonoBehaviourPunCallbacks
     {
         static MainMenu instance;
-
         private GameObject m_ui;
         private Button m_joinGameButton;
 
