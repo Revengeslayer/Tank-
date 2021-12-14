@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Complete
 {
-    public class TankShooting : MonoBehaviour
+    public class TankShooting : MonoBehaviourPunCallbacks
     {
         public int m_PlayerNumber = 1;              // Used to identify the different players.
         public Rigidbody m_Shell;                   // Prefab of the shell.
@@ -23,8 +24,10 @@ namespace Complete
         private bool m_Fired;                       // Whether or not the shell has been launched with this button press.
 
 
-        private void OnEnable()
+        public override void OnEnable()
         {
+            base.OnEnable();
+
             // When the tank is turned on, reset the launch force and the UI
             m_CurrentLaunchForce = m_MinLaunchForce;
             m_AimSlider.value = m_MinLaunchForce;
@@ -89,8 +92,9 @@ namespace Complete
             // Create an instance of the shell and store a reference to it's rigidbody.
             Rigidbody shellInstance =
                 Instantiate (m_Shell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
+            photonView.RPC("FireOther", RpcTarget.Others, m_FireTransform.position);
 
-            // Set the shell's velocity to the launch force in the fire position's forward direction.
+                  // Set the shell's velocity to the launch force in the fire position's forward direction.
             shellInstance.velocity = m_CurrentLaunchForce * m_FireTransform.forward; 
 
             // Change the clip to the firing clip and play it.
@@ -100,5 +104,17 @@ namespace Complete
             // Reset the launch force.  This is a precaution in case of missing button events.
             m_CurrentLaunchForce = m_MinLaunchForce;
         }
+
+
+    
+    [PunRPC]
+    private void FireOther(Vector3 pos)
+    {
+        m_Fired = true;
+        Rigidbody shellInstance = Instantiate(m_Shell, pos, m_FireTransform.rotation) as Rigidbody;
+        shellInstance.velocity = m_CurrentLaunchForce * m_FireTransform.forward;
+        m_CurrentLaunchForce = m_MinLaunchForce;
     }
+
+}
 }
