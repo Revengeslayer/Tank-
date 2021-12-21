@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     public static GameManager instance;
     public static GameObject localPlayer;
+    
 
 
     private GameObject defaultSpawnPoint;
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         DontDestroyOnLoad(gameObject);
         instance = this;
 
+        
         defaultSpawnPoint = new GameObject("Default SpawnPoint");
         defaultSpawnPoint.transform.position = new Vector3(0, 0, 0);
         defaultSpawnPoint.transform.SetParent(transform, false);
