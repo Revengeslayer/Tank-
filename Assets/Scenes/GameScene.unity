@@ -399,26 +399,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 140228639244310398, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 493418407701426419, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
       propertyPath: sceneViewId
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 782919336682428313, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 782919336682428313, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 985066094724509542, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1012248959639809563, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -426,18 +410,6 @@ PrefabInstance:
     - target: {fileID: 1012248959639809563, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1361837553616090311, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1361837553616090311, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3403336788520184448, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
-      propertyPath: m_Value
-      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3437240074956458778, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
       propertyPath: m_Name
@@ -445,10 +417,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4524262329067557143, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4524262329067557143, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
-      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5085603023604171910, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
@@ -494,14 +462,6 @@ PrefabInstance:
     - target: {fileID: 5085603023604171910, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5225012904621514988, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6752721664078698790, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8528145874674642742, guid: 263dc09d84cc9d247a3f27adc24e75ff, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
